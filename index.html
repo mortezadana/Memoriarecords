@@ -456,6 +456,11 @@
             box-shadow: 0 0 10px #7df9ff44;
             min-width: 120px;
         }
+        .gallery-photo img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
         .av-gallery-section {
             margin-top: 2rem;
             text-align: center;
@@ -587,8 +592,12 @@
     <section class="gallery-section">
         <div class="gallery-title" data-i18n="gallery-title">STUDIO GALLERY</div>
         <div class="gallery-photos">
-            <div class="gallery-photo" data-i18n="gallery-photo-1">Studio Photo 1</div>
-            <div class="gallery-photo" data-i18n="gallery-photo-2">Studio Photo 2</div>
+            <div class="gallery-photo">
+                <img src="assets/images/studio1.jpg" alt="Studio Photo 1">
+            </div>
+            <div class="gallery-photo">
+                <img src="assets/images/studio2.jpg" alt="Studio Photo 2">
+            </div>
             <div class="gallery-photo" data-i18n="gallery-photo-3">Studio Photo 3</div>
         </div>
         <!-- Video & Audio Gallery Subsections -->
