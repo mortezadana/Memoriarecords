@@ -147,7 +147,7 @@
         .contact-section-inner {
             position: relative;
             z-index: 2;
-            max-width: 600px;
+            max-width: 850px; /* Increased width */
             margin: 0 auto;
             background: rgba(47, 18, 97, 0.72);
             border-radius: 18px;
@@ -343,6 +343,11 @@
             outline: none;
             border-radius: 6px;
             background: #111;
+        }
+        @media (max-width: 1100px) {
+            .contact-section-inner {
+                max-width: 97vw;
+            }
         }
         @media (max-width: 700px) {
             .gallery-photos, .audio-samples, .video-samples {
