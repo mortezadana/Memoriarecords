@@ -14,7 +14,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #ede5ff; /* light purple */
+            background: #ede5ff;
             color: #222;
         }
         .lang-switcher-box {
@@ -312,30 +312,124 @@
                 padding-top: 1.5rem;
             }
         }
+        /* --- Creative Follow Section --- */
         .follow-section {
+            position: relative;
+            background: linear-gradient(120deg, #7df9ff 0%, #c7a3ff 100%);
+            color: #222;
             text-align: center;
             margin: 0;
-            padding-top: 0;
+            padding: 0 0 2.5rem 0;
+            overflow: hidden;
+        }
+        .follow-wave-top {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .follow-section-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.23);
+            border-radius: 24px;
+            box-shadow: 0 4px 32px #7df9ff22;
+            padding: 2.8rem 1.2rem 2.2rem 1.2rem;
+        }
+        .follow-emoji {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            vertical-align: middle;
+            margin-bottom: 0.2rem;
+            animation: bounce 2.3s infinite cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0);}
+            20% { transform: translateY(-12px);}
+            40% { transform: translateY(-24px);}
+            60% { transform: translateY(-10px);}
+            80% { transform: translateY(-4px);}
         }
         .follow-section h2 {
-            color: #7df9ff;
+            font-size: 2rem;
+            color: #4a007e;
+            margin-bottom: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 10px #fff8;
+        }
+        .random-cta {
+            font-size: 1.13rem;
+            margin-bottom: 1.4rem;
+            color: #4a007e;
+            background: #fff2;
+            border-radius: 16px;
+            display: inline-block;
+            padding: 0.5rem 1.3rem;
+            animation: fadein 1s;
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(16px);}
+            to { opacity: 1; transform: translateY(0);}
         }
         .social-links {
-            margin-top: 1.5rem;
+            margin-top: 1.1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2.2rem;
+            flex-wrap: wrap;
         }
         .social-links a {
-            display: inline-block;
-            color: #7df9ff;
-            font-size: 1.3rem;
-            margin: 0 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            transition: color 0.2s;
+            width: 64px;
+            height: 64px;
+            font-size: 2.2rem;
+            transition: transform 0.22s, box-shadow 0.18s, filter 0.19s;
+            border-radius: 50%;
+            position: relative;
+            background: #fff9;
+            box-shadow: 0 2px 16px #7df9ff22;
         }
-        .social-links a i {
-            margin-right: 7px;
+        .social-links a .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+            padding: 0;
         }
-        .social-links a:hover {
-            color: #ff99cc;
+        .social-links a:hover, .social-links a:focus {
+            transform: translateY(-14px) scale(1.12) rotate(-5deg);
+            box-shadow: 0 8px 28px #c7a3ff55;
+            filter: brightness(1.18);
+            z-index: 3;
+        }
+        .social-links a.youtube { color: #ff3131; background: #fff; }
+        .social-links a.tiktok { color: #111; background: linear-gradient(120deg, #fff 70%, #ff0050 100%); }
+        .social-links a.instagram {
+            color: #fff;
+            background: radial-gradient(circle at 30% 110%, #f9ce34 0%, #ee2a7b 60%, #6228d7 100%);
+        }
+        .social-links a.x { color: #111; background: #fff; }
+        @media (max-width: 900px) {
+            .follow-section-inner {max-width: 97vw;}
+            .social-links {gap: 1.2rem;}
+        }
+        @media (max-width: 700px) {
+            .follow-section-inner {
+                padding: 1.3rem 0.2rem 1.3rem 0.2rem;
+            }
+            .social-links { gap: 0.7rem;}
+            .social-links a {width: 52px; height: 52px; font-size: 1.5rem;}
         }
         .gallery-section {
             background: #111;
@@ -423,7 +517,6 @@
             </div>
         </div>
     </header>
-
     <section class="contact-section">
         <!-- SVG Wave Divider (top) -->
         <div class="contact-wave-top">
@@ -456,25 +549,39 @@
             </div>
         </div>
     </section>
-
+    <!-- Creative Follow Me Section -->
     <section class="follow-section">
-        <h2 data-i18n="follow-title">FOLLOW ME ON SOCIAL MEDIA</h2>
-        <div class="social-links">
-            <a href="https://youtube.com/yourchannel" target="_blank">
-                <i class="fab fa-youtube"></i><span data-i18n="youtube">YouTube</span>
-            </a>
-            <a href="https://tiktok.com/@yourprofile" target="_blank">
-                <i class="fab fa-tiktok"></i><span data-i18n="tiktok">TikTok</span>
-            </a>
-            <a href="https://instagram.com/yourprofile" target="_blank">
-                <i class="fab fa-instagram"></i><span data-i18n="instagram">Instagram</span>
-            </a>
-            <a href="https://x.com/yourprofile" target="_blank">
-                <i class="fab fa-x-twitter"></i><span data-i18n="x">X</span>
-            </a>
+        <div class="follow-wave-top">
+            <svg viewBox="0 0 1440 90" width="100%" height="60" preserveAspectRatio="none">
+                <path d="M0,80 Q360,20 720,80 T1440,80 V90 H0Z" fill="#6b47dc"/>
+            </svg>
+        </div>
+        <div class="follow-section-inner">
+            <img src="https://media.giphy.com/media/26gssIytJvy1b1THO/giphy.gif" alt="" class="follow-emoji" aria-hidden="true">
+            <h2 data-i18n="follow-title">
+                FOLLOW ME ON SOCIAL MEDIA
+            </h2>
+            <div class="random-cta" id="random-cta"></div>
+            <div class="social-links">
+                <a class="youtube" href="https://youtube.com/yourchannel" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube"></i>
+                    <span class="visually-hidden">YouTube</span>
+                </a>
+                <a class="tiktok" href="https://tiktok.com/@yourprofile" target="_blank" rel="noopener">
+                    <i class="fab fa-tiktok"></i>
+                    <span class="visually-hidden">TikTok</span>
+                </a>
+                <a class="instagram" href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                    <span class="visually-hidden">Instagram</span>
+                </a>
+                <a class="x" href="https://x.com/yourprofile" target="_blank" rel="noopener">
+                    <i class="fab fa-x-twitter"></i>
+                    <span class="visually-hidden">X</span>
+                </a>
+            </div>
         </div>
     </section>
-
     <section class="gallery-section">
         <div class="gallery-title" data-i18n="gallery-title">STUDIO GALLERY</div>
         <div class="gallery-photos">
@@ -482,7 +589,6 @@
             <div class="gallery-photo" data-i18n="gallery-photo-2">Studio Photo 2</div>
             <div class="gallery-photo" data-i18n="gallery-photo-3">Studio Photo 3</div>
         </div>
-
         <!-- Video & Audio Gallery Subsections -->
         <div class="av-gallery-section">
             <div class="av-gallery-title"><i class="fas fa-video"></i> <span data-i18n="video-gallery">Video Gallery</span></div>
@@ -502,7 +608,6 @@
                     </video>
                 </div>
             </div>
-
             <div class="av-gallery-title"><i class="fas fa-music"></i> <span data-i18n="audio-gallery">Audio Gallery</span></div>
             <div class="audio-samples">
                 <div class="audio-sample">
@@ -650,6 +755,20 @@
         });
 
         setLang('en');
+
+        // Creative follow-section CTA message
+        const ctaMessages = [
+            "🎬 Check out my latest music video on YouTube!",
+            "📸 See behind-the-scenes action on Instagram!",
+            "🎵 Daily beats & vibes on TikTok. Don’t miss out!",
+            "💬 Join the conversation on X – let’s connect!",
+            "🔥 New track previewed every Friday. Stay tuned!",
+            "💜 DM me for collabs or shoutouts!"
+        ];
+        document.addEventListener('DOMContentLoaded', function() {
+            var cta = document.getElementById('random-cta');
+            if (cta) cta.textContent = ctaMessages[Math.floor(Math.random()*ctaMessages.length)];
+        });
     </script>
 </body>
 </html>
