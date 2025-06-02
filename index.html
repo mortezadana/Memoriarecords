@@ -188,6 +188,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
+            flex-direction: row;
         }
         /* THEMED BUTTONS */
         .contact-buttons button {
@@ -203,6 +204,9 @@
             transition: background 0.18s, color 0.16s, transform 0.11s;
             position: relative;
             overflow: hidden;
+            min-width: 170px;
+            justify-content: center;
+            white-space: nowrap;
         }
         .contact-buttons button i {
             margin-right: 12px;
@@ -258,7 +262,59 @@
         .contact-buttons button:hover::after, .contact-buttons button:focus::after {
             opacity: 1;
         }
-        /* --- END FIRE CONTACT SECTION --- */
+        /* Responsive for buttons */
+        @media (max-width: 950px) {
+            .contact-section-inner {
+                max-width: 97vw;
+            }
+            .contact-buttons {
+                flex-wrap: wrap;
+                gap: 0.7rem;
+            }
+            .contact-buttons button {
+                min-width: 140px;
+                font-size: 1rem;
+                padding: 1rem 1.1rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.9rem;
+            }
+            .contact-buttons button {
+                width: 100%;
+                min-width: unset;
+                font-size: 1rem;
+                padding: 1rem 0.5rem;
+            }
+            .contact-section-inner {
+                padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+            }
+            audio, video {
+                width: 95vw;
+                max-width: 300px;
+            }
+            header {
+                min-height: 300px;
+                padding: 2.5rem 0 0 0;
+            }
+            .title-block {
+                padding: 1rem 1.5rem 1rem 1.5rem;
+            }
+            .studio-title {
+                font-size: 2.1rem;
+            }
+            .seo-passage {
+                font-size: 0.97rem;
+                padding: 1rem 0.7rem;
+            }
+            .contact-section {
+                min-height: 280px;
+                padding-top: 1.5rem;
+            }
+        }
         .follow-section {
             text-align: center;
             margin: 0;
@@ -343,46 +399,6 @@
             outline: none;
             border-radius: 6px;
             background: #111;
-        }
-        @media (max-width: 1100px) {
-            .contact-section-inner {
-                max-width: 97vw;
-            }
-        }
-        @media (max-width: 700px) {
-            .gallery-photos, .audio-samples, .video-samples {
-                flex-direction: column;
-                align-items: center;
-            }
-            .contact-section-inner {
-                padding: 1.2rem 0.3rem 1.2rem 0.3rem;
-            }
-            .contact-buttons {
-                flex-direction: column;
-                gap: 0.9rem;
-            }
-            audio, video {
-                width: 95vw;
-                max-width: 300px;
-            }
-            header {
-                min-height: 300px;
-                padding: 2.5rem 0 0 0;
-            }
-            .title-block {
-                padding: 1rem 1.5rem 1rem 1.5rem;
-            }
-            .studio-title {
-                font-size: 2.1rem;
-            }
-            .seo-passage {
-                font-size: 0.97rem;
-                padding: 1rem 0.7rem;
-            }
-            .contact-section {
-                min-height: 280px;
-                padding-top: 1.5rem;
-            }
         }
     </style>
 </head>
