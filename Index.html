@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memoria Records | Mixing & Mastering Studio</title>
+  <!-- SEO Meta -->
+  <meta name="description" content="Memoria Records Studio - Mixing & Mastering with futuristic precision and soul. Contact for professional audio production services.">
+  <meta name="keywords" content="mixing, mastering, studio, audio, music, production, Memoria Records">
+  <meta name="author" content="Memoria Records">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Memoria Records | Mixing & Mastering Studio">
+  <meta property="og:description" content="Crafting sonic masterpieces with futuristic precision and soul">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/cassette.png">
+  <meta property="og:url" content="https://memoriarecords.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/cassette.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap');
+    body {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+      color: #f1f1f1;
+      background-image: url('assets/images/bg-watermark.png');
+      background-repeat: repeat;
+      background-size: 200px;
+      animation: pulseBg 30s linear infinite;
+    }
+    @keyframes pulseBg {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+    header {
+      height: 35vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/images/header-bg.gif') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    .header-content {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 1rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      animation: fadeSlide 1.5s ease-out forwards;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header-content h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #0ff;
+      text-shadow: 0 0 10px rgba(0,255,255,0.6);
+    }
+    .header-content p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .contact-buttons {
+      position: relative;
+      min-height: 300px;
+      width: 100%;
+      padding: 3rem 0;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+    .contact-buttons::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/images/cassette.png') center/cover no-repeat;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    .contact-buttons::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 15, 15, 0.7);
+      z-index: 1;
+    }
+    .contact-buttons h2,
+    .contact-buttons .cassette-sample,
+    .contact-buttons div {
+      position: relative;
+      z-index: 2;
+    }
+    .contact-buttons a {
+      display: inline-block;
+      margin: 0.75rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(145deg, #1f1f3d, #2d2d5a);
+      color: #0ff;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 2px solid #0ff;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    .contact-buttons a:hover {
+      transform: scale(1.05);
+      background-color: #0ff;
+      color: #000;
+    }
+    .cassette-sample {
+      display: block;
+      margin: 2rem auto;
+      max-width: 200px;
+      filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
+      transition: transform 0.3s;
+    }
+    .cassette-sample:hover {
+      transform: rotate(5deg) scale(1.1);
+    }
+    .social-links a {
+      margin: 0.75rem;
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .social-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #0ff;
+    }
+    .gallery img, .video-samples video, .audio-samples audio {
+      max-width: 300px;
+      margin: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover, .video-samples video:hover, .audio-samples audio:hover {
+      transform: scale(1.05);
+    }
+    .gallery, .video-samples, .audio-samples {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #111;
+      padding: 2rem;
+      border-top: 2px solid #0ff;
+    }
+    h2 {
+      color: #0ff;
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Memoria Records Studio</h1>
+      <p>Crafting sonic masterpieces with futuristic precision and soul</p>
+    </div>
+  </header>
+
+  <section class="contact-buttons">
+    <h2>Contact Me</h2>
+    <img class="cassette-sample" src="assets/images/cassette.png" alt="Vintage Cassette Tape">
+    <div>
+      <!-- Replace these links with your real info -->
+      <a href="mailto:your@email.com">Email Me</a>
+      <a href="https://wa.me/yourwhatsapplink">Chat on WhatsApp</a>
+      <a href="https://t.me/yourtelegramlink">Message on Telegram</a>
+    </div>
+  </section>
+
+  <section class="social-links">
+    <h2>Follow Me</h2>
+    <a href="https://www.youtube.com/yourchannel" target="_blank">YouTube</a>
+    <a href="https://www.tiktok.com/@yourhandle" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/yourhandle" target="_blank">Instagram</a>
+  </section>
+
+  <section class="gallery">
+    <h2>Studio Gallery</h2>
+    <img src="assets/images/studio1.gif" alt="Studio Photo 1" />
+    <img src="assets/images/studio2.gif" alt="Studio Photo 2" />
+    <img src="assets/images/studio3.gif" alt="Studio Photo 3" />
+  </section>
+
+  <section class="video-samples">
+    <h2>Video Samples</h2>
+    <video controls src="assets/video/sample1.mp4"></video>
+    <video controls src="assets/video/sample2.mp4"></video>
+  </section>
+
+  <section class="audio-samples">
+    <h2>Listen to My Work</h2>
+    <audio controls src="assets/audio/sample1.mp3"></audio>
+    <audio controls src="assets/audio/sample2.mp3"></audio>
+  </section>
+</body>
+</html>
