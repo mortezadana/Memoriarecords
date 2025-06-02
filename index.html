@@ -58,7 +58,7 @@
             text-align: center;
             padding: 4rem 0 0 0;
             position: relative;
-            background: url('assets/images/header.gif') center center/cover no-repeat;
+            background: url('assets/images/header.png') center center/cover no-repeat;
             min-height: 400px;
             display: flex;
             flex-direction: column;
@@ -125,35 +125,140 @@
         section.contact-section {
             padding-top: 0;
         }
+        /* --- FIRE CONTACT SECTION --- */
         .contact-section {
-            background: #595959;
-            color: #7df9ff;
+            position: relative;
+            background: 
+                linear-gradient(135deg, #6b47dc 0%, #c7a3ff 100%);
+            color: #fff;
             text-align: center;
             margin-top: 0;
-            min-height: 320px;
-            padding-top: 3.5rem;
+            min-height: 430px;
+            padding-top: 4.5rem;
+            overflow: hidden;
+        }
+        .contact-wave-top {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .contact-section-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(47, 18, 97, 0.72);
+            border-radius: 18px;
+            box-shadow: 0 4px 32px #0002;
+            padding: 2.2rem 1.2rem 2rem 1.2rem;
+        }
+        .contact-section .fun-emoji {
+            font-size: 2.3rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .contact-section h2 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+            color: #ffe8ff;
+            text-shadow: 0 2px 16px #6b47dc66;
+        }
+        .contact-section .contact-lead {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            color: #e4d7ff;
+        }
+        .contact-section .quote-bubble {
+            display: inline-block;
+            background: #ffe8ff;
+            color: #6b47dc;
+            border-radius: 18px 18px 18px 4px;
+            font-size: 1.17rem;
+            padding: 0.8rem 1.3rem;
+            margin-bottom: 1.4rem;
+            box-shadow: 0 2px 12px #6b47dc17;
+            font-style: italic;
         }
         .contact-buttons {
             margin: 2rem 0 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
         }
+        /* THEMED BUTTONS */
         .contact-buttons button {
-            background: transparent;
-            color: #7df9ff;
-            border: 2px solid #7df9ff;
-            border-radius: 8px;
-            padding: 0.7rem 1.5rem;
-            margin: 0 0.7rem;
-            font-size: 1.1rem;
+            border: none;
+            border-radius: 16px;
+            padding: 1.05rem 2.1rem;
+            font-size: 1.13rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 4px 16px #af7bff33;
+            display: flex;
+            align-items: center;
+            transition: background 0.18s, color 0.16s, transform 0.11s;
+            position: relative;
+            overflow: hidden;
         }
         .contact-buttons button i {
-            margin-right: 8px;
+            margin-right: 12px;
+            font-size: 1.18em;
         }
-        .contact-buttons button:hover {
-            background: #7df9ff;
-            color: #333;
+        .contact-email-btn {
+            background: linear-gradient(135deg, #ffdae0 0%, #ffb6c1 100%);
+            color: #7b174b;
         }
+        .contact-email-btn:hover, .contact-email-btn:focus {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffdae0 100%);
+            color: #a80043;
+            transform: translateY(-3px) scale(1.035);
+        }
+        .contact-whatsapp-btn {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: #055e3c;
+        }
+        .contact-whatsapp-btn:hover, .contact-whatsapp-btn:focus {
+            background: linear-gradient(135deg, #38f9d7 0%, #43e97b 100%);
+            color: #045c2a;
+            transform: translateY(-3px) scale(1.035);
+        }
+        .contact-telegram-btn {
+            background: linear-gradient(135deg, #1c92d2 0%, #54aee6 100%);
+            color: #fff;
+        }
+        .contact-telegram-btn:hover, .contact-telegram-btn:focus {
+            background: linear-gradient(135deg, #54aee6 0%, #1c92d2 100%);
+            color: #e8f5ff;
+            transform: translateY(-3px) scale(1.035);
+        }
+        .contact-call-btn {
+            background: linear-gradient(135deg, #ffd452 0%, #ffb347 100%);
+            color: #8d5a00;
+        }
+        .contact-call-btn:hover, .contact-call-btn:focus {
+            background: linear-gradient(135deg, #ffb347 0%, #ffd452 100%);
+            color: #7f4700;
+            transform: translateY(-3px) scale(1.035);
+        }
+        .contact-buttons button::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 70% 30%, #fff8 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .contact-buttons button:hover::after, .contact-buttons button:focus::after {
+            opacity: 1;
+        }
+        /* --- END FIRE CONTACT SECTION --- */
         .follow-section {
             text-align: center;
             margin: 0;
@@ -244,9 +349,12 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .contact-buttons button {
-                margin: 0.7rem 0;
-                width: 90%;
+            .contact-section-inner {
+                padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+            }
+            .contact-buttons {
+                flex-direction: column;
+                gap: 0.9rem;
             }
             audio, video {
                 width: 95vw;
@@ -267,7 +375,7 @@
                 padding: 1rem 0.7rem;
             }
             .contact-section {
-                min-height: 240px;
+                min-height: 280px;
                 padding-top: 1.5rem;
             }
         }
@@ -299,18 +407,35 @@
     </header>
 
     <section class="contact-section">
-        <h2 data-i18n="contact-title">CONTACT ME</h2>
-        <div data-i18n="contact-desc">Click here to get in touch with us and book a session</div>
-        <div class="contact-buttons">
-            <button onclick="window.location.href='mailto:youremail@example.com'">
-                <i class="fas fa-envelope"></i><span data-i18n="contact-email">Email Us</span>
-            </button>
-            <button onclick="window.open('https://wa.me/yourwhatsapplink', '_blank')">
-                <i class="fab fa-whatsapp"></i><span data-i18n="contact-whatsapp">Chat on WhatsApp</span>
-            </button>
-            <button onclick="window.open('https://t.me/yourtelegram', '_blank')">
-                <i class="fab fa-telegram"></i><span data-i18n="contact-telegram">Message on Telegram</span>
-            </button>
+        <!-- SVG Wave Divider (top) -->
+        <div class="contact-wave-top">
+            <svg viewBox="0 0 1440 90" width="100%" height="60" preserveAspectRatio="none">
+                <path d="M0,60 Q360,0 720,60 T1440,60 V90 H0Z" fill="#ede5ff"/>
+            </svg>
+        </div>
+        <div class="contact-section-inner">
+            <span class="fun-emoji" aria-hidden="true">🎤</span>
+            <h2 data-i18n="contact-title">LET’S CONNECT!</h2>
+            <div class="contact-lead" data-i18n="contact-desc">
+                Ready to make music magic? Book a session or just say hi below!
+            </div>
+            <div class="quote-bubble">
+                <span data-i18n="contact-motto">“Your sound, your vibe, our studio – let's make it unforgettable!”</span>
+            </div>
+            <div class="contact-buttons">
+                <button class="contact-email-btn" onclick="window.location.href='mailto:youremail@example.com'">
+                    <i class="fas fa-envelope"></i><span data-i18n="contact-email">Email Us</span>
+                </button>
+                <button class="contact-whatsapp-btn" onclick="window.open('https://wa.me/yourwhatsapplink', '_blank')">
+                    <i class="fab fa-whatsapp"></i><span data-i18n="contact-whatsapp">Chat on WhatsApp</span>
+                </button>
+                <button class="contact-telegram-btn" onclick="window.open('https://t.me/yourtelegram', '_blank')">
+                    <i class="fab fa-telegram"></i><span data-i18n="contact-telegram">Message on Telegram</span>
+                </button>
+                <button class="contact-call-btn" onclick="window.location.href='tel:+1234567890'">
+                    <i class="fas fa-phone"></i><span data-i18n="contact-call">Call Me</span>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -392,11 +517,13 @@
                 "studio-title": "Memoria Records Production",
                 "studio-subtitle": "A cozy studio to record your vocals and mix your songs",
                 "seo-passage": "<strong>Memoria Records Production</strong> is your destination for professional music recording, vocal tracking, and song mixing. Our cozy studio features modern equipment and an inviting atmosphere for artists, producers, and musicians of all genres. Ready to take your sound to the next level? <strong>Contact us now</strong> to book your studio session or send us a message—let’s create your next hit together!",
-                "contact-title": "CONTACT ME",
-                "contact-desc": "Click here to get in touch with us and book a session",
+                "contact-title": "LET’S CONNECT!",
+                "contact-desc": "Ready to make music magic? Book a session or just say hi below!",
+                "contact-motto": "“Your sound, your vibe, our studio – let's make it unforgettable!”",
                 "contact-email": "Email Us",
                 "contact-whatsapp": "Chat on WhatsApp",
                 "contact-telegram": "Message on Telegram",
+                "contact-call": "Call Me",
                 "follow-title": "FOLLOW ME ON SOCIAL MEDIA",
                 "youtube": "YouTube",
                 "tiktok": "TikTok",
@@ -418,12 +545,14 @@
                 "studio-title": "استودیو مموریا رکوردز",
                 "studio-subtitle": "یک استودیوی صمیمی برای ضبط و میکس صدای شما",
                 "seo-passage": "<strong>استودیو مموریا رکوردز</strong> مقصد شما برای ضبط حرفه‌ای موسیقی، ضبط وکال و میکس آهنگ است. استودیوی ما با تجهیزات مدرن و فضایی دلپذیر، مناسب هنرمندان، تهیه‌کنندگان و موزیسین‌های تمامی سبک‌هاست. آماده‌اید صدای خود را به سطح بالاتری ببرید؟ <strong>همین حالا تماس بگیرید</strong> و جلسه استودیو رزرو کنید یا پیام دهید—بیایید با هم آهنگ بعدی شما را بسازیم!",
-                "contact-title": "تماس با من",
-                "contact-desc": "برای تماس و رزرو جلسه روی اینجا کلیک کنید",
-                "contact-email": "ارسال ایمیل",
+                "contact-title": "ارتباط با ما!",
+                "contact-desc": "آماده‌ای جادوی موسیقی بسازی؟ همین حالا جلسه رزرو کن یا به ما پیام بده!",
+                "contact-motto": "«صدای تو، حس تو، استودیوی ما – بیایید فراموش‌نشدنیش کنیم!»",
+                "contact-email": "ایمیل",
                 "contact-whatsapp": "چت در واتس‌اپ",
                 "contact-telegram": "پیام در تلگرام",
-                "follow-title": "من را در شبکه‌های اجتماعی دنبال کنید",
+                "contact-call": "تماس بگیرید",
+                "follow-title": "ما را در شبکه‌های اجتماعی دنبال کنید",
                 "youtube": "یوتیوب",
                 "tiktok": "تیک‌تاک",
                 "instagram": "اینستاگرام",
@@ -444,11 +573,13 @@
                 "studio-title": "Memoria Records Prodüksiyon",
                 "studio-subtitle": "Vokallerinizi kaydetmek ve şarkılarınızı mikslemek için samimi bir stüdyo",
                 "seo-passage": "<strong>Memoria Records Prodüksiyon</strong>, profesyonel müzik kaydı, vokal takibi ve şarkı miksleme için sizin adresiniz. Samimi stüdyomuz, modern ekipmanlar ve her türden sanatçı, prodüktör ve müzisyen için davetkar bir ortama sahiptir. Sesinizi bir üst seviyeye taşımaya hazır mısınız? <strong>Hemen iletişime geçin</strong>, stüdyo oturumu için rezervasyon yapın veya bize mesaj atın—birlikte sıradaki hitinizi yaratalım!",
-                "contact-title": "BENİMLE İLETİŞİME GEÇİN",
-                "contact-desc": "Bizimle iletişime geçmek ve oturum ayırtmak için buraya tıklayın",
-                "contact-email": "Bize E-posta Gönderin",
-                "contact-whatsapp": "WhatsApp'tan Sohbet Et",
-                "contact-telegram": "Telegram'dan Mesaj Gönderin",
+                "contact-title": "BİZE ULAŞIN!",
+                "contact-desc": "Müzik sihrini yaratmaya hazır mısınız? Hemen oturum ayırtın ya da bize merhaba deyin!",
+                "contact-motto": "“Senin sesin, senin enerjin, bizim stüdyomuz – unutulmaz yapalım!”",
+                "contact-email": "E-posta Gönder",
+                "contact-whatsapp": "WhatsApp'tan Yaz",
+                "contact-telegram": "Telegram'dan Mesaj",
+                "contact-call": "Ara",
                 "follow-title": "BENİ SOSYAL MEDYADA TAKİP EDİN",
                 "youtube": "YouTube",
                 "tiktok": "TikTok",
