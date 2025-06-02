@@ -16,20 +16,55 @@
         header {
             text-align: center;
             padding: 4rem 0 2rem 0;
+            position: relative;
+            background: url('assets/images/header.gif') center center/cover no-repeat;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 1;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .studio-title, .studio-subtitle, .seo-passage {
+            background: rgba(117, 117, 117, 0.80);
+            color: #7df9ff;
+            box-shadow: 0 0 20px #7df9ff44;
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            margin: 0.5rem 0;
         }
         .studio-title {
-            background: #757575;
-            color: #7df9ff;
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 16px;
             font-size: 2rem;
-            box-shadow: 0 0 20px #7df9ff44;
+            margin-bottom: 0.5rem;
         }
         .studio-subtitle {
-            margin-top: 1rem;
+            margin-top: 0;
             font-size: 1.2rem;
-            color: #888;
+            color: #c6f5f8;
+            background: rgba(117, 117, 117, 0.75);
+        }
+        .seo-passage {
+            max-width: 650px;
+            margin: 1.3rem auto 0 auto;
+            background: rgba(227, 252, 255, 0.77);
+            color: #222;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px #7df9ff33;
+            font-size: 1.11rem;
+            text-align: center;
         }
         section {
             margin: 2rem 0;
@@ -107,8 +142,46 @@
             box-shadow: 0 0 10px #7df9ff44;
             min-width: 120px;
         }
+        /* Audio/Video Gallery Styles */
+        .av-gallery-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .av-gallery-title {
+            color: #7df9ff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .audio-samples, .video-samples {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .audio-sample, .video-sample {
+            background: #222;
+            color: #7df9ff;
+            border-radius: 10px;
+            padding: 1rem;
+            min-width: 250px;
+            box-shadow: 0 0 10px #7df9ff44;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .audio-sample-title, .video-sample-title {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        audio, video {
+            width: 220px;
+            outline: none;
+            border-radius: 6px;
+            background: #111;
+        }
         @media (max-width: 700px) {
-            .gallery-photos {
+            .gallery-photos, .audio-samples, .video-samples {
                 flex-direction: column;
                 align-items: center;
             }
@@ -116,13 +189,27 @@
                 margin: 0.7rem 0;
                 width: 90%;
             }
+            audio, video {
+                width: 95vw;
+                max-width: 300px;
+            }
+            header {
+                min-height: 300px;
+                padding: 2.5rem 0 1rem 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="studio-title">Memoria Records Production</div>
-        <div class="studio-subtitle">A cozy studio to record your vocals and mix your songs</div>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="studio-title">Memoria Records Production</div>
+            <div class="studio-subtitle">A cozy studio to record your vocals and mix your songs</div>
+            <div class="seo-passage">
+                <strong>Memoria Records Production</strong> is your destination for professional music recording, vocal tracking, and song mixing. Our cozy studio features modern equipment and an inviting atmosphere for artists, producers, and musicians of all genres. Ready to take your sound to the next level? <strong>Contact us now</strong> to book your studio session or send us a message—let’s create your next hit together!
+            </div>
+        </div>
     </header>
 
     <section class="contact-section">
@@ -153,6 +240,9 @@
             <a href="https://instagram.com/yourprofile" target="_blank">
                 <i class="fab fa-instagram"></i>Instagram
             </a>
+            <a href="https://x.com/yourprofile" target="_blank">
+                <i class="fab fa-x-twitter"></i>X
+            </a>
         </div>
     </section>
 
@@ -162,6 +252,52 @@
             <div class="gallery-photo">Studio Photo 1</div>
             <div class="gallery-photo">Studio Photo 2</div>
             <div class="gallery-photo">Studio Photo 3</div>
+        </div>
+
+        <!-- Video & Audio Gallery Subsections -->
+        <div class="av-gallery-section">
+            <div class="av-gallery-title"><i class="fas fa-video"></i> Video Gallery</div>
+            <div class="video-samples">
+                <div class="video-sample">
+                    <div class="video-sample-title">Music Video 1</div>
+                    <video controls poster="assets/video/video1-thumb.jpg">
+                        <source src="assets/video/video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-sample">
+                    <div class="video-sample-title">Music Video 2</div>
+                    <video controls poster="assets/video/video2-thumb.jpg">
+                        <source src="assets/video/video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="av-gallery-title"><i class="fas fa-music"></i> Audio Gallery</div>
+            <div class="audio-samples">
+                <div class="audio-sample">
+                    <div class="audio-sample-title">Sample Track 1</div>
+                    <audio controls>
+                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="audio-sample">
+                    <div class="audio-sample-title">Sample Track 2</div>
+                    <audio controls>
+                        <source src="assets/audio/audio2.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="audio-sample">
+                    <div class="audio-sample-title">Sample Track 3</div>
+                    <audio controls>
+                        <source src="assets/audio/audio3.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
         </div>
     </section>
 </body>
