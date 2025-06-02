@@ -17,7 +17,6 @@
             background: #ede5ff; /* light purple */
             color: #222;
         }
-        /* Language Switcher Styles */
         .lang-switcher-box {
             position: absolute;
             top: 1rem;
@@ -58,7 +57,7 @@
             text-align: center;
             padding: 4rem 0 0 0;
             position: relative;
-            background: url('assets/images/header.png') center center/cover no-repeat;
+            background: url('assets/images/header.gif') center center/cover no-repeat;
             min-height: 400px;
             display: flex;
             flex-direction: column;
@@ -125,7 +124,6 @@
         section.contact-section {
             padding-top: 0;
         }
-        /* --- FIRE CONTACT SECTION --- */
         .contact-section {
             position: relative;
             background: 
@@ -147,7 +145,7 @@
         .contact-section-inner {
             position: relative;
             z-index: 2;
-            max-width: 850px; /* Increased width */
+            max-width: 850px;
             margin: 0 auto;
             background: rgba(47, 18, 97, 0.72);
             border-radius: 18px;
@@ -185,12 +183,12 @@
         .contact-buttons {
             margin: 2rem 0 1rem 0;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
             flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.1rem;
         }
-        /* THEMED BUTTONS */
         .contact-buttons button {
             border: none;
             border-radius: 16px;
@@ -262,14 +260,13 @@
         .contact-buttons button:hover::after, .contact-buttons button:focus::after {
             opacity: 1;
         }
-        /* Responsive for buttons */
-        @media (max-width: 950px) {
+        @media (max-width: 900px) {
             .contact-section-inner {
                 max-width: 97vw;
             }
             .contact-buttons {
                 flex-wrap: wrap;
-                gap: 0.7rem;
+                gap: 0.9rem;
             }
             .contact-buttons button {
                 min-width: 140px;
@@ -628,7 +625,6 @@
 
         function setLang(lang) {
             document.documentElement.lang = lang;
-            // For RTL languages like Persian
             if(lang === 'fa') {
                 document.body.dir = 'rtl';
             } else {
@@ -644,7 +640,6 @@
                     }
                 }
             });
-            // Show/hide the correct flag
             for (const l of Object.keys(flagMap)) {
                 document.getElementById('flag-' + l).style.display = (l === lang) ? 'inline' : 'none';
             }
@@ -654,7 +649,6 @@
             setLang(this.value);
         });
 
-        // Set default language on load
         setLang('en');
     </script>
 </body>
