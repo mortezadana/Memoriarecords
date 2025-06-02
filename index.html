@@ -448,6 +448,7 @@
             display: flex;
             justify-content: center;
             gap: 1.2rem;
+            flex-wrap: wrap;
         }
         .gallery-photo {
             background: #222;
@@ -455,48 +456,49 @@
             padding: 1.5rem 2rem;
             box-shadow: 0 0 10px #7df9ff44;
             min-width: 120px;
-        }
-        .gallery-photo img {
-            width: 100%;
-            border-radius: 8px;
-            display: block;
-        }
-        .av-gallery-section {
-            margin-top: 2rem;
             text-align: center;
         }
-        .av-gallery-title {
-            color: #7df9ff;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+        .gallery-photo img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
         }
-        .audio-samples, .video-samples {
-            display: flex;
-            flex-wrap: wrap;
+        .gallery-photo img:hover {
+            box-shadow: 0 0 20px #7df9ffcc;
+        }
+        /* Lightbox styles */
+        #lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.85);
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .audio-sample, .video-sample {
-            background: #222;
-            color: #7df9ff;
-            border-radius: 10px;
-            padding: 1rem;
-            min-width: 250px;
-            box-shadow: 0 0 10px #7df9ff44;
-            display: flex;
-            flex-direction: column;
             align-items: center;
         }
-        .audio-sample-title, .video-sample-title {
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
+        #lightbox-modal.active {
+            display: flex;
         }
-        audio, video {
-            width: 220px;
-            outline: none;
-            border-radius: 6px;
-            background: #111;
+        #lightbox-modal img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 0 40px #7df9ff88;
+        }
+        #lightbox-modal .close-btn {
+            position: absolute;
+            top: 2vw;
+            right: 3vw;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
         }
     </style>
 </head>
@@ -593,12 +595,22 @@
         <div class="gallery-title" data-i18n="gallery-title">STUDIO GALLERY</div>
         <div class="gallery-photos">
             <div class="gallery-photo">
-                <img src="assets/images/studio1.jpg" alt="Studio Photo 1">
+                <img src="assets/images/studio1.jpg" alt="Studio Photo 1" onclick="openLightbox('assets/images/studio1.jpg')">
             </div>
             <div class="gallery-photo">
-                <img src="assets/images/studio2.jpg" alt="Studio Photo 2">
+                <img src="assets/images/studio2.jpg" alt="Studio Photo 2" onclick="openLightbox('assets/images/studio2.jpg')">
             </div>
-            <div class="gallery-photo" data-i18n="gallery-photo-3">Studio Photo 3</div>
+            <div class="gallery-photo">
+                <img src="assets/images/studio3.jpg" alt="Studio Photo 3" onclick="openLightbox('assets/images/studio3.jpg')">
+            </div>
+            <div class="gallery-photo">
+                <img src="assets/images/studio4.jpg" alt="Studio Photo 4" onclick="openLightbox('assets/images/studio4.jpg')">
+            </div>
+        </div>
+        <!-- Lightbox modal -->
+        <div id="lightbox-modal" onclick="closeLightbox(event)">
+            <button class="close-btn" onclick="closeLightbox(event)">&times;</button>
+            <img id="lightbox-img" src="" alt="Full Size Studio Photo">
         </div>
         <!-- Video & Audio Gallery Subsections -->
         <div class="av-gallery-section">
@@ -780,6 +792,19 @@
             var cta = document.getElementById('random-cta');
             if (cta) cta.textContent = ctaMessages[Math.floor(Math.random()*ctaMessages.length)];
         });
+
+        // Lightbox functionality
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-modal').classList.add('active');
+        }
+        function closeLightbox(event) {
+            // Only close if clicking overlay or close button
+            if (event.target.id === 'lightbox-modal' || event.target.classList.contains('close-btn')) {
+                document.getElementById('lightbox-modal').classList.remove('active');
+                document.getElementById('lightbox-img').src = '';
+            }
+        }
     </script>
 </body>
 </html>
