@@ -18,10 +18,10 @@
             color: #222;
         }
         header {
-            margin-top: 0;
-            border-top: none;
+            margin: 0;
+            border: 0;
             text-align: center;
-            padding: 4rem 0 2rem 0;
+            padding: 4rem 0 0 0; /* No bottom padding for flush sections */
             position: relative;
             background: url('assets/images/header.png') center center/cover no-repeat;
             min-height: 400px;
@@ -44,23 +44,33 @@
             align-items: center;
             width: 100%;
         }
-        .studio-title, .studio-subtitle, .seo-passage {
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: rgba(117, 117, 117, 0.80);
             color: #7df9ff;
             box-shadow: 0 0 20px #7df9ff44;
-            border-radius: 16px;
-            padding: 1rem 2rem;
+            border-radius: 20px;
+            padding: 1.5rem 3rem 1.2rem 3rem;
             margin: 0.5rem 0;
+            max-width: 90vw;
         }
         .studio-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            margin: 0 0 0.2rem 0;
+            color: #7df9ff;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
         }
         .studio-subtitle {
-            margin-top: 0;
-            font-size: 1.2rem;
+            margin: 0;
+            font-size: 1.3rem;
             color: #c6f5f8;
-            background: rgba(117, 117, 117, 0.75);
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
         }
         .seo-passage {
             max-width: 650px;
@@ -73,11 +83,14 @@
             text-align: center;
         }
         section {
-            margin: 2rem 0;
+            margin: 0;
+            padding: 0 0 2rem 0; /* Only bottom padding for content spacing, no top padding for gapless look */
+        }
+        section.contact-section {
+            padding-top: 0; /* Remove top padding after header for true gapless */
         }
         .contact-section {
             background: #595959;
-            padding: 3rem 0 2rem 0;
             color: #7df9ff;
             text-align: center;
         }
@@ -104,7 +117,8 @@
         }
         .follow-section {
             text-align: center;
-            margin: 2rem 0;
+            margin: 0;
+            padding-top: 0;
         }
         .follow-section h2 {
             color: #7df9ff;
@@ -129,8 +143,9 @@
         .gallery-section {
             background: #111;
             color: #7df9ff;
-            padding: 2rem 0;
             text-align: center;
+            margin: 0;
+            padding-top: 0;
         }
         .gallery-title {
             font-size: 2rem;
@@ -201,7 +216,13 @@
             }
             header {
                 min-height: 300px;
-                padding: 2.5rem 0 1rem 0;
+                padding: 2.5rem 0 0 0;
+            }
+            .title-block {
+                padding: 1rem 1.5rem 1rem 1.5rem;
+            }
+            .studio-title {
+                font-size: 2.1rem;
             }
         }
     </style>
@@ -210,8 +231,10 @@
     <header>
         <div class="header-overlay"></div>
         <div class="header-content">
-            <div class="studio-title">Memoria Records Production</div>
-            <div class="studio-subtitle">A cozy studio to record your vocals and mix your songs</div>
+            <div class="title-block">
+                <div class="studio-title">Memoria Records Production</div>
+                <div class="studio-subtitle">A cozy studio to record your vocals and mix your songs</div>
+            </div>
             <div class="seo-passage">
                 <strong>Memoria Records Production</strong> is your destination for professional music recording, vocal tracking, and song mixing. Our cozy studio features modern equipment and an inviting atmosphere for artists, producers, and musicians of all genres. Ready to take your sound to the next level? <strong>Contact us now</strong> to book your studio session or send us a message—let’s create your next hit together!
             </div>
