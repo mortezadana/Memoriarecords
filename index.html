@@ -433,7 +433,7 @@
             .social-links { gap: 0.7rem;}
             .social-links a {width: 52px; height: 52px; font-size: 1.5rem;}
         }
-        /* ========== CREATIVE GALLERY SECTION ========== */
+        /* ========== CREATIVE GALLERY SECTION (WITH FIXED IMAGE RATIOS) ========== */
         .gallery-section {
             background: #111;
             color: #7df9ff;
@@ -504,16 +504,26 @@
             border: 3px solid #7df9ff;
             z-index: 3;
         }
-        .gallery-photo img {
-            max-width: 180px;
+        .gallery-photo-img-wrap {
             width: 100%;
-            height: auto;
+            aspect-ratio: 4 / 3;
+            background: #161616;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.8rem;
+        }
+        .gallery-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 10px;
             display: block;
-            margin: 0 auto 0.8rem auto;
-            cursor: pointer;
             box-shadow: 0 1.5px 12px #7df9ff22;
             transition: box-shadow 0.18s;
+            cursor: pointer;
         }
         .gallery-photo:hover img {
             box-shadow: 0 2.5px 24px #7df9ff55;
@@ -569,8 +579,8 @@
                 max-width: 170px;
                 padding: 1rem 0.8rem 1.2rem 0.8rem;
             }
-            .gallery-photo img {
-                max-width: 130px;
+            .gallery-photo-img-wrap {
+                aspect-ratio: 4 / 3;
             }
         }
         @media (max-width: 600px) {
@@ -585,8 +595,12 @@
                 width: 94vw;
                 margin: 0 auto 1.5rem auto;
             }
-            .gallery-photo img {
+            .gallery-photo-img-wrap {
                 max-width: 85vw;
+                aspect-ratio: 4 / 3;
+            }
+            .gallery-photo img {
+                max-width: 100%;
             }
         }
         /* ========== END CREATIVE GALLERY ========== */
@@ -730,19 +744,27 @@
         <div class="gallery-subtitle">Explore our cozy studio & creative moments!</div>
         <div class="gallery-photos">
             <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio1.jpg')">
-                <img src="assets/images/studio1.jpg" alt="Studio Photo 1">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio1.jpg" alt="Studio Photo 1">
+                </div>
                 <div class="gallery-caption">Main vocal booth & mic setup</div>
             </div>
             <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio2.jpg')">
-                <img src="assets/images/studio2.jpg" alt="Studio Photo 2">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio2.jpg" alt="Studio Photo 2">
+                </div>
                 <div class="gallery-caption">Chill zone for artists</div>
             </div>
             <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio3.jpg')">
-                <img src="assets/images/studio3.jpg" alt="Studio Photo 3">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio3.jpg" alt="Studio Photo 3">
+                </div>
                 <div class="gallery-caption">Mixing desk and gear</div>
             </div>
             <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio4.jpg')">
-                <img src="assets/images/studio4.jpg" alt="Studio Photo 4">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio4.jpg" alt="Studio Photo 4">
+                </div>
                 <div class="gallery-caption">Memorable session with artists</div>
             </div>
         </div>
