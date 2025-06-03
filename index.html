@@ -126,7 +126,6 @@
         }
         .contact-section {
             position: relative;
-            /* Unified color for both contact and social: */
             background: linear-gradient(135deg, #6b47dc 0%, #c7a3ff 100%);
             color: #fff;
             text-align: center;
@@ -322,7 +321,6 @@
         /* --- Creative Follow Section --- */
         .follow-section {
             position: relative;
-            /* Unified color for both contact and social: */
             background: linear-gradient(135deg, #6b47dc 0%, #c7a3ff 100%);
             color: #fff;
             text-align: center;
@@ -636,6 +634,26 @@
             margin-bottom: 0.5rem;
             font-size: 1.05rem;
         }
+        /* --- Enhanced audio gallery --- */
+        .audio-sample-caption {
+            margin-top: 0.4rem;
+            font-size: 0.97rem;
+            color: #bbf7ff;
+            font-style: italic;
+            text-shadow: 0 1px 8px #1116;
+            letter-spacing: 0.01em;
+            opacity: 0.93;
+            transition: color 0.18s;
+        }
+        .audio-sample-title i {
+            color: #7df9ff;
+            margin-right: 7px;
+        }
+        .audio-sample:hover .audio-sample-caption,
+        .audio-sample:focus-within .audio-sample-caption {
+            color: #7df9ff;
+        }
+        /* --- End enhanced audio gallery --- */
         .video-embed-wrap {
             width: 320px;
             max-width: 100%;
@@ -825,25 +843,34 @@
             <div class="av-gallery-title"><i class="fas fa-music"></i> <span data-i18n="audio-gallery">Audio Gallery</span></div>
             <div class="audio-samples">
                 <div class="audio-sample">
-                    <div class="audio-sample-title" data-i18n="audio-sample-1">Sample Track 1</div>
+                    <div class="audio-sample-title" data-i18n="audio-sample-1">
+                        <i class="fas fa-headphones"></i> Sample Track 1
+                    </div>
                     <audio controls>
                         <source src="assets/audio/audio1.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
+                    <div class="audio-sample-caption">Vocal session, raw take</div>
                 </div>
                 <div class="audio-sample">
-                    <div class="audio-sample-title" data-i18n="audio-sample-2">Sample Track 2</div>
+                    <div class="audio-sample-title" data-i18n="audio-sample-2">
+                        <i class="fas fa-music"></i> Sample Track 2
+                    </div>
                     <audio controls>
                         <source src="assets/audio/audio2.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
+                    <div class="audio-sample-caption">Full mix, pop-rock style</div>
                 </div>
                 <div class="audio-sample">
-                    <div class="audio-sample-title" data-i18n="audio-sample-3">Sample Track 3</div>
+                    <div class="audio-sample-title" data-i18n="audio-sample-3">
+                        <i class="fas fa-guitar"></i> Sample Track 3
+                    </div>
                     <audio controls>
                         <source src="assets/audio/audio3.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
+                    <div class="audio-sample-caption">Instrumental demo</div>
                 </div>
             </div>
         </div>
