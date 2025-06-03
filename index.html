@@ -724,16 +724,16 @@
                 <span data-i18n="contact-motto">“Your sound, your vibe, our studio – let's make it unforgettable!”</span>
             </div>
             <div class="contact-buttons">
-                <button class="contact-email-btn" onclick="window.location.href='mailto:youremail@example.com'">
+                <button class="contact-email-btn" onclick="window.location.href='mailto:memoriarecordsproduction@gmail.com'">
                     <i class="fas fa-envelope"></i><span data-i18n="contact-email">Email Us</span>
                 </button>
-                <button class="contact-whatsapp-btn" onclick="window.open('https://wa.me/yourwhatsapplink', '_blank')">
+                <button class="contact-whatsapp-btn" onclick="window.open('https://wa.me/905346846078', '_blank')">
                     <i class="fab fa-whatsapp"></i><span data-i18n="contact-whatsapp">Chat on WhatsApp</span>
                 </button>
-                <button class="contact-telegram-btn" onclick="window.open('https://t.me/yourtelegram', '_blank')">
+                <button class="contact-telegram-btn" onclick="window.open('https://t.me/MemoriaMori93', '_blank')">
                     <i class="fab fa-telegram"></i><span data-i18n="contact-telegram">Message on Telegram</span>
                 </button>
-                <button class="contact-call-btn" onclick="window.location.href='tel:+1234567890'">
+                <button class="contact-call-btn" onclick="window.location.href='tel:+905346846978'">
                     <i class="fas fa-phone"></i><span data-i18n="contact-call">Call Me</span>
                 </button>
             </div>
@@ -850,7 +850,7 @@
                         <source src="assets/audio/audio1.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <div class="audio-sample-caption">Vocal session, raw take</div>
+                    <div class="audio-sample-caption">Instrumental demo, beat made by Memoria Mori</div>
                 </div>
                 <div class="audio-sample">
                     <div class="audio-sample-title" data-i18n="audio-sample-2">
@@ -860,7 +860,7 @@
                         <source src="assets/audio/audio2.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <div class="audio-sample-caption">Full mix, pop-rock style</div>
+                    <div class="audio-sample-caption">Full mix demo, reggae style</div>
                 </div>
                 <div class="audio-sample">
                     <div class="audio-sample-title" data-i18n="audio-sample-3">
@@ -870,7 +870,7 @@
                         <source src="assets/audio/audio3.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <div class="audio-sample-caption">Instrumental demo</div>
+                    <div class="audio-sample-caption">Full mix track</div>
                 </div>
             </div>
         </div>
@@ -907,9 +907,9 @@
                 "audio-sample-3": "Sample Track 3"
             },
             fa: {
-                "studio-title": "استودیو مموریا رکوردز",
+                "studio-title": "Memoria Records",
                 "studio-subtitle": "یک استودیوی صمیمی برای ضبط و میکس صدای شما",
-                "seo-passage": "<strong>استودیو مموریا رکوردز</strong> مقصد شما برای ضبط حرفه‌ای موسیقی، ضبط وکال و میکس آهنگ است. استودیوی ما با تجهیزات مدرن و فضایی دلپذیر، مناسب هنرمندان، تهیه‌کنندگان و موزیسین‌های تمامی سبک‌هاست. آماده‌اید صدای خود را به سطح بالاتری ببرید؟ <strong>همین حالا تماس بگیرید</strong> و جلسه استودیو رزرو کنید یا پیام دهید—بیایید با هم آهنگ بعدی شما را بسازیم!",
+                "seo-passage": "<strong>اMemoria Records</strong> مقصد شما برای ضبط حرفه‌ای موسیقی، ضبط وکال و میکس آهنگ است. استودیوی ما با تجهیزات مدرن و فضایی دلپذیر، مناسب هنرمندان، تهیه‌کنندگان و موزیسین‌های تمامی سبک‌هاست. آماده‌اید صدای خود را به سطح بالاتری ببرید؟ <strong>همین حالا تماس بگیرید</strong> و جلسه استودیو رزرو کنید یا پیام دهید—بیایید با هم آهنگ بعدی شما را بسازیم!",
                 "contact-title": "ارتباط با ما!",
                 "contact-desc": "آماده‌ای جادوی موسیقی بسازی؟ همین حالا جلسه رزرو کن یا به ما پیام بده!",
                 "contact-motto": "«صدای تو، حس تو، استودیوی ما – بیایید فراموش‌نشدنیش کنیم!»",
@@ -970,17 +970,13 @@
             fa: '🇮🇷'
         };
 
-        // ---- Language detection on load ----
+        // --- Default to the user's browser language if supported ---
         document.addEventListener('DOMContentLoaded', function() {
-            // Get the user's preferred language (e.g., "en", "fa", "tr")
             var userLang = navigator.language || navigator.userLanguage || 'en';
-            userLang = userLang.split('-')[0]; // get the base language code
-            // Supported languages on your site
+            userLang = userLang.split('-')[0];
             var supportedLangs = ['en', 'fa', 'tr'];
-            // If user's language is supported, use it; otherwise default to English
             var langToSet = supportedLangs.includes(userLang) ? userLang : 'en';
             setLang(langToSet);
-            // Optionally, update the select dropdown
             document.getElementById('lang-switcher').value = langToSet;
         });
 
@@ -1015,8 +1011,8 @@
             "🎬 Check out my latest music video on YouTube!",
             "📸 See behind-the-scenes action on Instagram!",
             "🎵 Daily beats & vibes on TikTok. Don’t miss out!",
-            "💬 Join the conversation on X – let’s connect!",
-            "🔥 New track previewed every Friday. Stay tuned!",
+            "💬 Join the conversation – let’s connect!",
+            "🔥 Follow me on social media. Stay tuned!",
             "💜 DM me for collabs or shoutouts!"
         ];
         document.addEventListener('DOMContentLoaded', function() {
