@@ -797,9 +797,9 @@
                 "follow-title": "FOLLOW ME ON SOCIAL MEDIA"
             },
             fa: {
-                "studio-title": "استودیو Memoria Records",
+                "studio-title": "استودیو مموریا رکوردز",
                 "studio-subtitle": "یک استودیوی صمیمی برای ضبط وکال و میکس آهنگ‌های شما",
-                "seo-passage": "<strong>استودیو Memoria</strong> مقصد شما برای ضبط حرفه‌ای موسیقی، ضبط وکال و میکس آهنگ است. استودیوی دنج ما با تجهیزات مدرن و فضایی دلپذیر برای هنرمندان، تهیه‌کنندگان و موزیسین‌های تمام ژانرها فراهم شده است. آماده‌اید صدای خود را به سطح بالاتری ببرید؟ <strong>همین حالا تماس بگیرید</strong> برای رزرو یا پیام بدهید—بیایید با هم موزیک بعدی شما را بسازیم!",
+                "seo-passage": "<strong>استودیو مموریا رکوردز</strong> مقصد شما برای ضبط حرفه‌ای موسیقی، ضبط وکال و میکس آهنگ است. استودیوی دنج ما با تجهیزات مدرن و فضایی دلپذیر برای هنرمندان، تهیه‌کنندگان و موزیسین‌های تمام ژانرها فراهم شده است. آماده‌اید صدای خود را به سطح بالاتری ببرید؟ <strong>همین حالا تماس بگیرید</strong> برای رزرو یا پیام بدهید—بیایید با هم موزیک بعدی شما را بسازیم!",
                 "gallery-title": "گالری استودیو",
                 "gallery-subtitle": "استودیوی دنج ما و لحظات خلاقانه را ببینید!",
                 "gallery-caption-1": "اتاق وکال اصلی و تنظیم میکروفن",
@@ -852,8 +852,13 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Default to Turkish on first load
-            var langToSet = 'tr';
+            // Detect user language
+            var supportedLangs = ['tr', 'en', 'fa'];
+            var userLang = (navigator.languages && navigator.languages.length)
+                ? navigator.languages[0]
+                : (navigator.language || navigator.userLanguage || 'tr');
+            userLang = userLang.toLowerCase().split('-')[0];
+            var langToSet = supportedLangs.includes(userLang) ? userLang : 'tr';
             var langSel = document.getElementById('lang-switcher');
             setLang(langToSet);
             langSel.value = langToSet;
