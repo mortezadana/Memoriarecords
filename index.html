@@ -153,7 +153,6 @@
             padding: 0 0 2.5rem 0;
             max-width: 1180px;
         }
-        /* ========== GALLERY SECTION ========== */
         .gallery-section {
             background: var(--color-section-dark);
             color: var(--color-text-main);
@@ -281,7 +280,6 @@
             background: none;
             border: none;
         }
-        /* ========== VIDEO & AUDIO ========== */
         .av-gallery-section {
             margin-top: 2rem;
             text-align: center;
@@ -452,7 +450,6 @@
         .contact-buttons button:hover::after, .contact-buttons button:focus::after {
             opacity: 1;
         }
-        /* ========== SOCIAL SECTION ========== */
         .follow-section {
             background: var(--color-section);
             color: var(--color-text-main);
@@ -592,62 +589,8 @@
     <section class="gallery-section">
         <div class="gallery-title" data-i18n="gallery-title">STÜDYO GALERİSİ</div>
         <div class="gallery-subtitle" data-i18n="gallery-subtitle">Samimi stüdyomuzu ve yaratıcı anlarımızı keşfedin!</div>
-        <div class="gallery-photos">
-            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio1.jpg')">
-                <div class="gallery-photo-img-wrap">
-                    <img src="assets/images/studio1.jpg" alt="Studio Photo 1">
-                </div>
-                <div class="gallery-caption" data-i18n="gallery-caption-1">Ana vokal kabini & mikrofon kurulumu</div>
-            </div>
-            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio2.jpg')">
-                <div class="gallery-photo-img-wrap">
-                    <img src="assets/images/studio2.jpg" alt="Studio Photo 2">
-                </div>
-                <div class="gallery-caption" data-i18n="gallery-caption-2">Sanatçılar için dinlenme alanı</div>
-            </div>
-            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio3.jpg')">
-                <div class="gallery-photo-img-wrap">
-                    <img src="assets/images/studio3.jpg" alt="Studio Photo 3">
-                </div>
-                <div class="gallery-caption" data-i18n="gallery-caption-3">Mix masası ve ekipmanlar</div>
-            </div>
-            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio4.jpg')">
-                <div class="gallery-photo-img-wrap">
-                    <img src="assets/images/studio4.jpg" alt="Studio Photo 4">
-                </div>
-                <div class="gallery-caption" data-i18n="gallery-caption-4">Lewitt Pure Tube dinamik mikrofon</div>
-            </div>
-        </div>
-        <div id="lightbox-modal" onclick="closeLightbox(event)">
-            <button class="close-btn" onclick="closeLightbox(event)">&times;</button>
-            <img id="lightbox-img" src="" alt="Full Size Studio Photo">
-        </div>
+        <!-- AUDIO FIRST -->
         <div class="av-gallery-section">
-            <div class="av-gallery-title"><i class="fas fa-video"></i> <span data-i18n="video-gallery">Video Galerisi</span></div>
-            <div class="video-samples">
-                <div class="video-sample">
-                    <div class="video-sample-title" data-i18n="video-sample-1">Müzik Videosu 1</div>
-                    <div class="video-embed-wrap">
-                        <iframe 
-                            src="https://www.youtube.com/embed/oaqtniugqpc"
-                            title="Music Video 1"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div class="video-sample">
-                    <div class="video-sample-title" data-i18n="video-sample-2">Müzik Videosu 2</div>
-                    <div class="video-embed-wrap">
-                        <iframe 
-                            src="https://www.youtube.com/embed/gmLaTw3sL_Q"
-                            title="Music Video 2"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
             <div class="av-gallery-title"><i class="fas fa-music"></i> <span data-i18n="audio-gallery">Ses Galerisi</span></div>
             <div class="audio-samples">
                 <div class="audio-sample">
@@ -681,6 +624,63 @@
                     <div class="audio-sample-caption" data-i18n="audio-caption-3">Tam miks parça</div>
                 </div>
             </div>
+            <!-- VIDEO SECOND -->
+            <div class="av-gallery-title"><i class="fas fa-video"></i> <span data-i18n="video-gallery">Video Galerisi</span></div>
+            <div class="video-samples">
+                <div class="video-sample">
+                    <div class="video-sample-title" data-i18n="video-sample-1">Müzik Videosu 1</div>
+                    <div class="video-embed-wrap">
+                        <iframe 
+                            src="https://www.youtube.com/embed/oaqtniugqpc"
+                            title="Music Video 1"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="video-sample">
+                    <div class="video-sample-title" data-i18n="video-sample-2">Müzik Videosu 2</div>
+                    <div class="video-embed-wrap">
+                        <iframe 
+                            src="https://www.youtube.com/embed/gmLaTw3sL_Q"
+                            title="Music Video 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- IMAGES THIRD -->
+        <div class="gallery-photos">
+            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio1.jpg')">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio1.jpg" alt="Studio Photo 1">
+                </div>
+                <div class="gallery-caption" data-i18n="gallery-caption-1">Ana vokal kabini & mikrofon kurulumu</div>
+            </div>
+            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio2.jpg')">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio2.jpg" alt="Studio Photo 2">
+                </div>
+                <div class="gallery-caption" data-i18n="gallery-caption-2">Sanatçılar için dinlenme alanı</div>
+            </div>
+            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio3.jpg')">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio3.jpg" alt="Studio Photo 3">
+                </div>
+                <div class="gallery-caption" data-i18n="gallery-caption-3">Mix masası ve ekipmanlar</div>
+            </div>
+            <div class="gallery-photo" tabindex="0" onclick="openLightbox('assets/images/studio4.jpg')">
+                <div class="gallery-photo-img-wrap">
+                    <img src="assets/images/studio4.jpg" alt="Studio Photo 4">
+                </div>
+                <div class="gallery-caption" data-i18n="gallery-caption-4">Lewitt Pure Tube dinamik mikrofon</div>
+            </div>
+        </div>
+        <div id="lightbox-modal" onclick="closeLightbox(event)">
+            <button class="close-btn" onclick="closeLightbox(event)">&times;</button>
+            <img id="lightbox-img" src="" alt="Full Size Studio Photo">
         </div>
     </section>
     <section class="contact-section">
