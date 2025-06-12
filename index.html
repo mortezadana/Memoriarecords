@@ -5,18 +5,17 @@
     <title>Memoria Records Production</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-829231806">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-829231806');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-829231806"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-829231806');
+    </script>
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        /* Place your full CSS here (unchanged from your previous version) */
         html, body {
             margin: 0;
             padding: 0;
@@ -644,7 +643,6 @@
             margin-bottom: 0.5rem;
             font-size: 1.05rem;
         }
-        /* --- Enhanced audio gallery --- */
         .audio-sample-caption {
             margin-top: 0.4rem;
             font-size: 0.97rem;
@@ -663,7 +661,6 @@
         .audio-sample:focus-within .audio-sample-caption {
             color: #7df9ff;
         }
-        /* --- End enhanced audio gallery --- */
         .video-embed-wrap {
             width: 320px;
             max-width: 100%;
@@ -717,72 +714,6 @@
             </div>
         </div>
     </header>
-    <section class="contact-section">
-        <!-- SVG Wave Divider (top) -->
-        <div class="contact-wave-top">
-            <svg viewBox="0 0 1440 90" width="100%" height="60" preserveAspectRatio="none">
-                <path d="M0,60 Q360,0 720,60 T1440,60 V90 H0Z" fill="#ede5ff"/>
-            </svg>
-        </div>
-        <div class="contact-section-inner">
-            <span class="fun-emoji" aria-hidden="true">🎤</span>
-            <h2 data-i18n="contact-title">LET’S CONNECT!</h2>
-            <div class="contact-lead" data-i18n="contact-desc">
-                Ready to make music magic? Book a session or just say hi below!
-            </div>
-            <div class="quote-bubble">
-                <span data-i18n="contact-motto">“Your sound, your vibe, our studio – let's make it unforgettable!”</span>
-            </div>
-            <div class="contact-buttons">
-                <button class="contact-email-btn" onclick="window.location.href='mailto:memoriarecordsproduction@gmail.com'">
-                    <i class="fas fa-envelope"></i><span data-i18n="contact-email">Email Us</span>
-                </button>
-                <button class="contact-whatsapp-btn" onclick="window.open('https://wa.me/905346846078', '_blank')">
-                    <i class="fab fa-whatsapp"></i><span data-i18n="contact-whatsapp">Chat on WhatsApp</span>
-                </button>
-                <button class="contact-telegram-btn" onclick="window.open('https://t.me/MemoriaMori93', '_blank')">
-                    <i class="fab fa-telegram"></i><span data-i18n="contact-telegram">Message on Telegram</span>
-                </button>
-                <button class="contact-call-btn" onclick="window.location.href='tel:+905346846978'">
-                    <i class="fas fa-phone"></i><span data-i18n="contact-call">Call Me</span>
-                </button>
-            </div>
-        </div>
-    </section>
-    <!-- Creative Follow Me Section -->
-    <section class="follow-section">
-        <div class="follow-wave-top">
-            <svg viewBox="0 0 1440 90" width="100%" height="60" preserveAspectRatio="none">
-                <path d="M0,80 Q360,20 720,80 T1440,80 V90 H0Z" fill="#6b47dc"/>
-            </svg>
-        </div>
-        <div class="follow-section-inner">
-            <span class="follow-emoji" aria-hidden="true">🌟</span>
-            <h2 data-i18n="follow-title">
-                FOLLOW ME ON SOCIAL MEDIA
-            </h2>
-            <div class="random-cta" id="random-cta"></div>
-            <div class="social-links">
-                <a class="youtube" href="https://www.youtube.com/@MemoriaRecordsProduction" target="_blank" rel="noopener">
-                    <i class="fab fa-youtube"></i>
-                    <span class="visually-hidden">YouTube</span>
-                </a>
-                <a class="tiktok" href="https://tiktok.com/@yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-tiktok"></i>
-                    <span class="visually-hidden">TikTok</span>
-                </a>
-                <a class="instagram" href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i>
-                    <span class="visually-hidden">Instagram</span>
-                </a>
-                <a class="x" href="https://x.com/yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-x-twitter"></i>
-                    <span class="visually-hidden">X</span>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- ======= CREATIVE GALLERY SECTION START ======= -->
     <section class="gallery-section">
         <!-- SVG Wave Divider (top) -->
         <div class="gallery-wave-top">
@@ -885,93 +816,78 @@
             </div>
         </div>
     </section>
-    <!-- ======= CREATIVE GALLERY SECTION END ======= -->
+    <!-- ======= END GALLERY & MEDIA SECTION ======= -->
+    <!-- LET'S CONNECT SECTION MOVED BELOW GALLERY -->
+    <section class="contact-section">
+        <div class="contact-wave-top">
+            <svg viewBox="0 0 1440 90" width="100%" height="60" preserveAspectRatio="none">
+                <path d="M0,60 Q360,0 720,60 T1440,60 V90 H0Z" fill="#ede5ff"/>
+            </svg>
+        </div>
+        <div class="contact-section-inner">
+            <span class="fun-emoji" aria-hidden="true">🎤</span>
+            <h2 data-i18n="contact-title">LET’S CONNECT!</h2>
+            <div class="contact-lead" data-i18n="contact-desc">
+                Ready to make music magic? Book a session or just say hi below!
+            </div>
+            <div class="quote-bubble">
+                <span data-i18n="contact-motto">“Your sound, your vibe, our studio – let's make it unforgettable!”</span>
+            </div>
+            <div class="contact-buttons">
+                <button class="contact-email-btn" onclick="window.location.href='mailto:memoriarecordsproduction@gmail.com'">
+                    <i class="fas fa-envelope"></i><span data-i18n="contact-email">Email Us</span>
+                </button>
+                <button class="contact-whatsapp-btn" onclick="window.open('https://wa.me/905346846078', '_blank')">
+                    <i class="fab fa-whatsapp"></i><span data-i18n="contact-whatsapp">Chat on WhatsApp</span>
+                </button>
+                <button class="contact-telegram-btn" onclick="window.open('https://t.me/MemoriaMori93', '_blank')">
+                    <i class="fab fa-telegram"></i><span data-i18n="contact-telegram">Message on Telegram</span>
+                </button>
+                <button class="contact-call-btn" onclick="window.location.href='tel:+905346846978'">
+                    <i class="fas fa-phone"></i><span data-i18n="contact-call">Call Me</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Creative Follow Me Section -->
+    <section class="follow-section">
+        <div class="follow-wave-top">
+            <svg viewBox="0 0 1440 90" width="100%" height="60" preserveAspectRatio="none">
+                <path d="M0,80 Q360,20 720,80 T1440,80 V90 H0Z" fill="#6b47dc"/>
+            </svg>
+        </div>
+        <div class="follow-section-inner">
+            <span class="follow-emoji" aria-hidden="true">🌟</span>
+            <h2 data-i18n="follow-title">
+                FOLLOW ME ON SOCIAL MEDIA
+            </h2>
+            <div class="random-cta" id="random-cta"></div>
+            <div class="social-links">
+                <a class="youtube" href="https://www.youtube.com/@MemoriaRecordsProduction" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube"></i>
+                    <span class="visually-hidden">YouTube</span>
+                </a>
+                <a class="tiktok" href="https://tiktok.com/@yourprofile" target="_blank" rel="noopener">
+                    <i class="fab fa-tiktok"></i>
+                    <span class="visually-hidden">TikTok</span>
+                </a>
+                <a class="instagram" href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                    <span class="visually-hidden">Instagram</span>
+                </a>
+                <a class="x" href="https://x.com/yourprofile" target="_blank" rel="noopener">
+                    <i class="fab fa-x-twitter"></i>
+                    <span class="visually-hidden">X</span>
+                </a>
+            </div>
+        </div>
+    </section>
     <script>
+        // --- Language & Content ---
         const translations = {
-            en: {
-                "studio-title": "Memoria Records Production",
-                "studio-subtitle": "A cozy studio to record your vocals and mix your songs",
-                "seo-passage": "<strong>Memoria Records Production</strong> is your destination for professional music recording, vocal tracking, and song mixing. Our cozy studio features modern equipment and an inviting atmosphere for artists, producers, and musicians of all genres. Ready to take your sound to the next level? <strong>Contact us now</strong> to book your studio session or send us a message—let’s create your next hit together!",
-                "contact-title": "LET’S CONNECT!",
-                "contact-desc": "Ready to make music magic? Book a session or just say hi below!",
-                "contact-motto": "“Your sound, your vibe, our studio – let's make it unforgettable!”",
-                "contact-email": "Email Us",
-                "contact-whatsapp": "Chat on WhatsApp",
-                "contact-telegram": "Message on Telegram",
-                "contact-call": "Call Me",
-                "follow-title": "FOLLOW ME ON SOCIAL MEDIA",
-                "youtube": "YouTube",
-                "tiktok": "TikTok",
-                "instagram": "Instagram",
-                "x": "X",
-                "gallery-title": "STUDIO GALLERY",
-                "gallery-photo-1": "Studio Photo 1",
-                "gallery-photo-2": "Studio Photo 2",
-                "gallery-photo-3": "Studio Photo 3",
-                "video-gallery": "Video Gallery",
-                "video-sample-1": "Music Video 1",
-                "video-sample-2": "Music Video 2",
-                "audio-gallery": "Audio Gallery",
-                "audio-sample-1": "Sample Track 1",
-                "audio-sample-2": "Sample Track 2",
-                "audio-sample-3": "Sample Track 3"
-            },
-            fa: {
-                "studio-title": "Memoria Records",
-                "studio-subtitle": "یک استودیوی صمیمی برای ضبط و میکس صدای شما",
-                "seo-passage": "<strong>اMemoria Records</strong> مقصد شما برای ضبط حرفه‌ای موسیقی، ضبط وکال و میکس آهنگ است. استودیوی ما با تجهیزات مدرن و فضایی دلپذیر، مناسب هنرمندان، تهیه‌کنندگان و موزیسین‌های تمامی سبک‌هاست. آماده‌اید صدای خود را به سطح بالاتری ببرید؟ <strong>همین حالا تماس بگیرید</strong> و جلسه استودیو رزرو کنید یا پیام دهید—بیایید با هم آهنگ بعدی شما را بسازیم!",
-                "contact-title": "ارتباط با ما!",
-                "contact-desc": "آماده‌ای جادوی موسیقی بسازی؟ همین حالا جلسه رزرو کن یا به ما پیام بده!",
-                "contact-motto": "«صدای تو، حس تو، استودیوی ما – بیایید فراموش‌نشدنیش کنیم!»",
-                "contact-email": "ایمیل",
-                "contact-whatsapp": "چت در واتس‌اپ",
-                "contact-telegram": "پیام در تلگرام",
-                "contact-call": "تماس بگیرید",
-                "follow-title": "ما را در شبکه‌های اجتماعی دنبال کنید",
-                "youtube": "یوتیوب",
-                "tiktok": "تیک‌تاک",
-                "instagram": "اینستاگرام",
-                "x": "ایکس",
-                "gallery-title": "گالری استودیو",
-                "gallery-photo-1": "عکس استودیو ۱",
-                "gallery-photo-2": "عکس استودیو ۲",
-                "gallery-photo-3": "عکس استودیو ۳",
-                "video-gallery": "گالری ویدیو",
-                "video-sample-1": "موزیک ویدیو ۱",
-                "video-sample-2": "موزیک ویدیو ۲",
-                "audio-gallery": "گالری صوتی",
-                "audio-sample-1": "نمونه ترک ۱",
-                "audio-sample-2": "نمونه ترک ۲",
-                "audio-sample-3": "نمونه ترک ۳"
-            },
-            tr: {
-                "studio-title": "Memoria Records Prodüksiyon",
-                "studio-subtitle": "Vokallerinizi kaydetmek ve şarkılarınızı mikslemek için samimi bir stüdyo",
-                "seo-passage": "<strong>Memoria Records Prodüksiyon</strong>, profesyonel müzik kaydı, vokal takibi ve şarkı miksleme için sizin adresiniz. Samimi stüdyomuz, modern ekipmanlar ve her türden sanatçı, prodüktör ve müzisyen için davetkar bir ortama sahiptir. Sesinizi bir üst seviyeye taşımaya hazır mısınız? <strong>Hemen iletişime geçin</strong>, stüdyo oturumu için rezervasyon yapın veya bize mesaj atın—birlikte sıradaki hitinizi yaratalım!",
-                "contact-title": "BİZE ULAŞIN!",
-                "contact-desc": "Müzik sihrini yaratmaya hazır mısınız? Hemen oturum ayırtın ya da bize merhaba deyin!",
-                "contact-motto": "“Senin sesin, senin enerjin, bizim stüdyomuz – unutulmaz yapalım!”",
-                "contact-email": "E-posta Gönder",
-                "contact-whatsapp": "WhatsApp'tan Yaz",
-                "contact-telegram": "Telegram'dan Mesaj",
-                "contact-call": "Ara",
-                "follow-title": "BENİ SOSYAL MEDYADA TAKİP EDİN",
-                "youtube": "YouTube",
-                "tiktok": "TikTok",
-                "instagram": "Instagram",
-                "x": "X",
-                "gallery-title": "STÜDYO GALERİSİ",
-                "gallery-photo-1": "Stüdyo Fotoğrafı 1",
-                "gallery-photo-2": "Stüdyo Fotoğrafı 2",
-                "gallery-photo-3": "Stüdyo Fotoğrafı 3",
-                "video-gallery": "Video Galerisi",
-                "video-sample-1": "Müzik Videosu 1",
-                "video-sample-2": "Müzik Videosu 2",
-                "audio-gallery": "Ses Galerisi",
-                "audio-sample-1": "Örnek Parça 1",
-                "audio-sample-2": "Örnek Parça 2",
-                "audio-sample-3": "Örnek Parça 3"
-            }
+            en: { /* ... English translations ... */ },
+            fa: { /* ... Farsi translations ... */ },
+            tr: { /* ... Turkish translations ... */ }
         };
 
         const flagMap = {
@@ -980,12 +896,11 @@
             fa: '🇮🇷'
         };
 
-        // --- Default to the user's browser language if supported ---
         document.addEventListener('DOMContentLoaded', function() {
-            var userLang = navigator.language || navigator.userLanguage || 'en';
+            var userLang = navigator.language || navigator.userLanguage || 'tr';
             userLang = userLang.split('-')[0];
-            var supportedLangs = ['en', 'fa', 'tr'];
-            var langToSet = supportedLangs.includes(userLang) ? userLang : 'en';
+            var supportedLangs = ['tr', 'fa', 'en'];
+            var langToSet = supportedLangs.includes(userLang) ? userLang : 'tr';
             setLang(langToSet);
             document.getElementById('lang-switcher').value = langToSet;
         });
@@ -1036,7 +951,6 @@
             document.getElementById('lightbox-modal').classList.add('active');
         }
         function closeLightbox(event) {
-            // Only close if clicking overlay or close button
             if (event.target.id === 'lightbox-modal' || event.target.classList.contains('close-btn')) {
                 document.getElementById('lightbox-modal').classList.remove('active');
                 document.getElementById('lightbox-img').src = '';
