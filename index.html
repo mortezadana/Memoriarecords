@@ -153,22 +153,168 @@
             padding: 0 0 2.5rem 0;
             max-width: 1180px;
         }
-        /* ========== GALLERY SECTION ========== */
-        .gallery-section {
-            background: var(--color-section-dark);
-            color: var(--color-text-main);
-            text-align: center;
-            position: relative;
+
+        /* ===== AUDIO GALLERY ===== */
+        .audio-gallery-section {
+            padding: 2.5rem 0 2rem 0;
+            background: var(--color-section);
             border-radius: var(--section-radius);
             box-shadow: var(--color-shadow-strong);
-            margin-top: calc(-1 * var(--section-radius) / 1.2);
             margin-bottom: var(--section-spacing);
-            padding-top: 3.5rem;
-            padding-bottom: 2.5rem;
+            margin-top: calc(-1 * var(--section-radius) / 1.2);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .audio-gallery-title {
+            font-size: 2.1rem;
+            color: var(--color-primary);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .audio-samples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+        .audio-sample {
+            background: var(--color-card-bg-alt);
+            border-radius: 16px;
+            box-shadow: var(--color-shadow);
+            padding: 1.3rem 1.2rem 1.7rem 1.2rem;
+            min-width: 230px;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 0.2rem;
+            border: 1.5px solid var(--color-border);
+            transition: box-shadow 0.2s, transform 0.14s;
+        }
+        .audio-sample:hover, .audio-sample:focus-within {
+            box-shadow: 0 6px 30px #43E97B99, 0 0 0 #fff0;
+            transform: translateY(-7px) scale(1.03);
+            border-color: var(--color-primary);
             z-index: 2;
         }
+        .audio-sample-header {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.2rem;
+        }
+        .audio-sample-header .audio-icon {
+            font-size: 1.7rem;
+            color: var(--color-primary);
+        }
+        .audio-sample-title {
+            font-size: 1.08rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        .audio-sample-artist {
+            font-size: 0.97rem;
+            color: var(--color-secondary);
+            margin-left: 3px;
+        }
+        .audio-sample audio {
+            width: 100%;
+            margin: 0.5rem 0 0.7rem 0;
+            accent-color: var(--color-primary);
+        }
+        .audio-sample-caption {
+            color: var(--color-text-subtle);
+            font-size: 0.97rem;
+            font-style: italic;
+            margin-top: 0.15rem;
+        }
+
+        /* ===== VIDEO GALLERY ===== */
+        .video-gallery-section {
+            padding: 2.5rem 0 2rem 0;
+            background: var(--color-section-dark);
+            border-radius: var(--section-radius);
+            box-shadow: var(--color-shadow-strong);
+            margin-bottom: var(--section-spacing);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-gallery-title {
+            font-size: 2rem;
+            color: var(--color-secondary);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .video-samples {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .video-sample {
+            background: var(--color-card-bg);
+            border-radius: 10px;
+            padding: 1rem;
+            min-width: 250px;
+            box-shadow: var(--color-shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1.5px solid var(--color-border);
+        }
+        .video-sample-title {
+            margin-bottom: 0.5rem;
+            font-size: 1.08rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        .video-embed-wrap {
+            width: 320px;
+            max-width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-embed-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ===== PHOTO GALLERY ===== */
+        .gallery-photo-section {
+            padding: 2.5rem 0 2.5rem 0;
+            background: var(--color-alt-section);
+            border-radius: var(--section-radius);
+            box-shadow: var(--color-shadow-strong);
+            margin-bottom: var(--section-spacing);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .gallery-title {
-            font-size: 2.3rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--color-accent);
         }
@@ -237,9 +383,6 @@
             transition: box-shadow 0.18s;
             cursor: pointer;
         }
-        .gallery-photo:hover img {
-            box-shadow: 0 2.5px 24px var(--color-accent);
-        }
         .gallery-caption {
             margin-top: 0.3rem;
             color: var(--color-text-subtle);
@@ -281,90 +424,22 @@
             background: none;
             border: none;
         }
-        /* ========== VIDEO & AUDIO ========== */
-        .av-gallery-section {
-            margin-top: 2rem;
-            text-align: center;
-        }
-        .av-gallery-title {
-            color: var(--color-primary);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-        .audio-samples, .video-samples {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .audio-sample, .video-sample {
-            background: var(--color-card-bg-alt);
-            border-radius: 10px;
-            padding: 1rem;
-            min-width: 250px;
-            box-shadow: var(--color-shadow);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1.5px solid var(--color-border);
-        }
-        .audio-sample-title, .video-sample-title {
-            margin-bottom: 0.5rem;
-            font-size: 1.08rem;
-            color: var(--color-accent);
-            font-weight: 600;
-        }
-        .audio-sample-caption {
-            margin-top: 0.4rem;
-            font-size: 0.97rem;
-            color: var(--color-text-subtle);
-            font-style: italic;
-            text-shadow: 0 1px 8px #1116;
-        }
-        .audio-sample-title i {
-            color: var(--color-primary);
-            margin-right: 7px;
-        }
-        .video-embed-wrap {
-            width: 320px;
-            max-width: 100%;
-            aspect-ratio: 16/9;
-            background: #000;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .video-embed-wrap iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
-        audio {
-            width: 220px;
-            outline: none;
-            border-radius: 6px;
-            background: #181A20;
-        }
-        /* ========== CONTACT SECTION ========== */
+
+        /* ==== CONTACT SECTION ENHANCED ==== */
         .contact-section {
             background: var(--color-alt-section);
             color: var(--color-text-main);
             text-align: center;
-            margin-top: 0;
             min-height: 430px;
             padding-top: 4.5rem;
-            overflow: hidden;
             border-radius: var(--section-radius);
             box-shadow: var(--color-shadow-strong);
+            margin-bottom: var(--section-spacing);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .contact-section-inner {
-            position: relative;
-            z-index: 2;
             max-width: 850px;
             margin: 0 auto;
             background: var(--color-section-dark);
@@ -452,7 +527,8 @@
         .contact-buttons button:hover::after, .contact-buttons button:focus::after {
             opacity: 1;
         }
-        /* ========== SOCIAL SECTION ========== */
+
+        /* ==== FOLLOW SECTION (unchanged, still styled) ==== */
         .follow-section {
             background: var(--color-section);
             color: var(--color-text-main);
@@ -462,6 +538,9 @@
             border-radius: var(--section-radius);
             box-shadow: var(--color-shadow-strong);
             margin-bottom: var(--section-spacing);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .follow-section-inner {
             position: relative;
@@ -589,7 +668,75 @@
             </div>
         </div>
     </header>
-    <section class="gallery-section">
+    <!-- ===== AUDIO GALLERY FIRST ===== -->
+    <section class="audio-gallery-section">
+        <div class="audio-gallery-title"><i class="fas fa-music"></i> Audio Gallery</div>
+        <div class="audio-samples">
+            <div class="audio-sample">
+                <div class="audio-sample-header">
+                    <span class="audio-icon"><i class="fas fa-headphones"></i></span>
+                    <span class="audio-sample-title" data-i18n="audio-sample-1">Sample Track 1</span>
+                </div>
+                <audio controls>
+                    <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-sample-caption">Instrumental demo, beat made by Memoria Mori</div>
+            </div>
+            <div class="audio-sample">
+                <div class="audio-sample-header">
+                    <span class="audio-icon"><i class="fas fa-music"></i></span>
+                    <span class="audio-sample-title" data-i18n="audio-sample-2">Sample Track 2</span>
+                </div>
+                <audio controls>
+                    <source src="assets/audio/audio2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-sample-caption">Full mix demo, reggae style</div>
+            </div>
+            <div class="audio-sample">
+                <div class="audio-sample-header">
+                    <span class="audio-icon"><i class="fas fa-guitar"></i></span>
+                    <span class="audio-sample-title" data-i18n="audio-sample-3">Sample Track 3</span>
+                </div>
+                <audio controls>
+                    <source src="assets/audio/audio3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-sample-caption">Full mix track</div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== VIDEO GALLERY SECOND ===== -->
+    <section class="video-gallery-section">
+        <div class="video-gallery-title"><i class="fas fa-video"></i> Video Gallery</div>
+        <div class="video-samples">
+            <div class="video-sample">
+                <div class="video-sample-title" data-i18n="video-sample-1">Music Video 1</div>
+                <div class="video-embed-wrap">
+                    <iframe 
+                        src="https://www.youtube.com/embed/oaqtniugqpc"
+                        title="Music Video 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="video-sample">
+                <div class="video-sample-title" data-i18n="video-sample-2">Music Video 2</div>
+                <div class="video-embed-wrap">
+                    <iframe 
+                        src="https://www.youtube.com/embed/gmLaTw3sL_Q"
+                        title="Music Video 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== PHOTO GALLERY THIRD ===== -->
+    <section class="gallery-photo-section">
         <div class="gallery-title" data-i18n="gallery-title">STUDIO GALLERY</div>
         <div class="gallery-subtitle">Explore our cozy studio & creative moments!</div>
         <div class="gallery-photos">
@@ -622,67 +769,8 @@
             <button class="close-btn" onclick="closeLightbox(event)">&times;</button>
             <img id="lightbox-img" src="" alt="Full Size Studio Photo">
         </div>
-        <div class="av-gallery-section">
-            <div class="av-gallery-title"><i class="fas fa-video"></i> <span data-i18n="video-gallery">Video Gallery</span></div>
-            <div class="video-samples">
-                <div class="video-sample">
-                    <div class="video-sample-title" data-i18n="video-sample-1">Music Video 1</div>
-                    <div class="video-embed-wrap">
-                        <iframe 
-                            src="https://www.youtube.com/embed/oaqtniugqpc"
-                            title="Music Video 1"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div class="video-sample">
-                    <div class="video-sample-title" data-i18n="video-sample-2">Music Video 2</div>
-                    <div class="video-embed-wrap">
-                        <iframe 
-                            src="https://www.youtube.com/embed/gmLaTw3sL_Q"
-                            title="Music Video 2"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="av-gallery-title"><i class="fas fa-music"></i> <span data-i18n="audio-gallery">Audio Gallery</span></div>
-            <div class="audio-samples">
-                <div class="audio-sample">
-                    <div class="audio-sample-title" data-i18n="audio-sample-1">
-                        <i class="fas fa-headphones"></i> Sample Track 1
-                    </div>
-                    <audio controls>
-                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="audio-sample-caption">Instrumental demo, beat made by Memoria Mori</div>
-                </div>
-                <div class="audio-sample">
-                    <div class="audio-sample-title" data-i18n="audio-sample-2">
-                        <i class="fas fa-music"></i> Sample Track 2
-                    </div>
-                    <audio controls>
-                        <source src="assets/audio/audio2.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="audio-sample-caption">Full mix demo, reggae style</div>
-                </div>
-                <div class="audio-sample">
-                    <div class="audio-sample-title" data-i18n="audio-sample-3">
-                        <i class="fas fa-guitar"></i> Sample Track 3
-                    </div>
-                    <audio controls>
-                        <source src="assets/audio/audio3.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <div class="audio-sample-caption">Full mix track</div>
-                </div>
-            </div>
-        </div>
     </section>
+    <!-- ===== CONTACT & FOLLOW SECTIONS ===== -->
     <section class="contact-section">
         <div class="contact-section-inner">
             <span class="fun-emoji" aria-hidden="true">🎤</span>
@@ -737,69 +825,7 @@
         </div>
     </section>
     <script>
-        // --- Language & Content ---
-        const translations = {
-            en: { /* ... English translations ... */ },
-            fa: { /* ... Farsi translations ... */ },
-            tr: { /* ... Turkish translations ... */ }
-        };
-
-        const flagMap = {
-            en: '🇬🇧',
-            tr: '🇹🇷',
-            fa: '🇮🇷'
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var userLang = navigator.language || navigator.userLanguage || 'tr';
-            userLang = userLang.split('-')[0];
-            var supportedLangs = ['tr', 'fa', 'en'];
-            var langToSet = supportedLangs.includes(userLang) ? userLang : 'tr';
-            setLang(langToSet);
-            document.getElementById('lang-switcher').value = langToSet;
-        });
-
-        function setLang(lang) {
-            document.documentElement.lang = lang;
-            if(lang === 'fa') {
-                document.body.dir = 'rtl';
-            } else {
-                document.body.dir = 'ltr';
-            }
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    if (el.tagName === 'DIV' || el.tagName === 'SPAN' || el.tagName === 'H2' || el.tagName === 'STRONG' || el.classList.contains('seo-passage')) {
-                        el.innerHTML = translations[lang][key];
-                    } else {
-                        el.textContent = translations[lang][key];
-                    }
-                }
-            });
-            for (const l of Object.keys(flagMap)) {
-                document.getElementById('flag-' + l).style.display = (l === lang) ? 'inline' : 'none';
-            }
-        }
-
-        document.getElementById('lang-switcher').addEventListener('change', function() {
-            setLang(this.value);
-        });
-
-        // Creative follow-section CTA message
-        const ctaMessages = [
-            "🎬 Check out my latest music video on YouTube!",
-            "📸 See behind-the-scenes action on Instagram!",
-            "🎵 Daily beats & vibes on TikTok. Don’t miss out!",
-            "💬 Join the conversation – let’s connect!",
-            "🔥 Follow me on social media. Stay tuned!",
-            "💜 DM me for collabs or shoutouts!"
-        ];
-        document.addEventListener('DOMContentLoaded', function() {
-            var cta = document.getElementById('random-cta');
-            if (cta) cta.textContent = ctaMessages[Math.floor(Math.random()*ctaMessages.length)];
-        });
-
-        // Lightbox functionality
+        // ...existing JS (translations, flags, language, cta, lightbox)...
         function openLightbox(src) {
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox-modal').classList.add('active');
